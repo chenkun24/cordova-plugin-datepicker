@@ -24,6 +24,7 @@
 @property (nonatomic) IBOutlet UIButton *cancelButton;
 @property (nonatomic) IBOutlet UIButton *doneButton;
 @property (nonatomic) IBOutlet UIDatePicker *datePicker;
+@property (weak, nonatomic) IBOutlet UILabel *dateLabel;
 
 @end
 
@@ -137,9 +138,18 @@
   [self hide];
 }
 
+- (IBAction)dateValueChangedAction:(id)sender {
+    [self updateDateLabel:self.datePicker.date];
+}
 
 - (void)dateChangedAction:(id)sender {
   [self jsDateSelected];
+}
+
+- (void)updateDateLabel:(NSDate *)date
+{
+    NSDateFormatter *formatter = [self createISODateFormatter: @"yyyy年MM月dd日 HH:mm" timezone:[NSTimeZone defaultTimeZone]];
+    self.dateLabel.text = [formatter stringFromDate:date];
 }
 
 #pragma mark - JS API
@@ -242,6 +252,7 @@
   }
   
   self.datePicker.date = [formatter dateFromString:dateString];
+  [self updateDateLabel:self.datePicker.date];
   
   if ([mode isEqualToString:@"date"]) {
     self.datePicker.datePickerMode = UIDatePickerModeDate;
@@ -275,23 +286,29 @@
 }
 
 - (void)updateCancelButton:(NSMutableDictionary *)options {
-
-  NSString *label = [options objectForKey:@"cancelButtonLabel"];
-  [self.cancelButton setTitle:label forState:UIControlStateNormal];
-  
-  NSString *tintColorHex = [options objectForKey:@"cancelButtonColor"];
-  self.cancelButton.tintColor = [self colorFromHexString: tintColorHex];
-  
+    
+    NSString *label = [options objectForKey:@"cancelButtonLabel"];
+    if (label) {
+        [self.cancelButton setTitle:label forState:UIControlStateNormal];
+    }
+    
+    NSString *tintColorHex = [options objectForKey:@"cancelButtonColor"];
+    if (tintColorHex) {
+        self.cancelButton.tintColor = [self colorFromHexString: tintColorHex];
+    }
 }
 
 - (void)updateDoneButton:(NSMutableDictionary *)options {
-  
-  NSString *label = [options objectForKey:@"doneButtonLabel"];
-  [self.doneButton setTitle:label forState:UIControlStateNormal];
-  
-  NSString *tintColorHex = [options objectForKey:@"doneButtonColor"];
-  [self.doneButton setTintColor: [self colorFromHexString: tintColorHex]];
-  
+    
+    NSString *label = [options objectForKey:@"doneButtonLabel"];
+    if (label) {
+        [self.doneButton setTitle:label forState:UIControlStateNormal];
+    }
+    
+    NSString *tintColorHex = [options objectForKey:@"doneButtonColor"];
+    if (tintColorHex) {
+        [self.doneButton setTintColor: [self colorFromHexString: tintColorHex]];
+    }
 }
 
 
