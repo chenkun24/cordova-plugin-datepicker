@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -52,9 +52,10 @@
                             <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FEs-Wn-Ur2">
-                                    <rect key="frame" x="319" y="0.0" width="33" height="44"/>
+                                    <rect key="frame" x="312" y="0.0" width="46" height="44"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="44" id="HPF-95-Eyz"/>
+                                        <constraint firstAttribute="width" constant="46" id="Rxd-le-BZa"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                     <state key="normal" title="完成">
@@ -74,8 +75,9 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xq4-6B-F5W">
-                                    <rect key="frame" x="23" y="0.0" width="33" height="44"/>
+                                    <rect key="frame" x="17" y="0.0" width="46" height="44"/>
                                     <constraints>
+                                        <constraint firstAttribute="width" constant="46" id="8jH-vy-N6e"/>
                                         <constraint firstAttribute="height" constant="44" id="rdQ-Si-ceK"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -91,8 +93,8 @@
                             <constraints>
                                 <constraint firstItem="xq4-6B-F5W" firstAttribute="top" secondItem="GFZ-t6-wN0" secondAttribute="top" id="58i-Aq-oNI"/>
                                 <constraint firstAttribute="trailing" secondItem="PBt-q7-yAL" secondAttribute="trailing" constant="50" id="HZZ-jw-Dhy"/>
-                                <constraint firstItem="xq4-6B-F5W" firstAttribute="leading" secondItem="GFZ-t6-wN0" secondAttribute="leading" constant="23" id="HqM-hN-i7L"/>
-                                <constraint firstAttribute="trailing" secondItem="FEs-Wn-Ur2" secondAttribute="trailing" constant="23" id="bzB-YN-lTl"/>
+                                <constraint firstItem="xq4-6B-F5W" firstAttribute="leading" secondItem="GFZ-t6-wN0" secondAttribute="leading" constant="17" id="HqM-hN-i7L"/>
+                                <constraint firstAttribute="trailing" secondItem="FEs-Wn-Ur2" secondAttribute="trailing" constant="17" id="bzB-YN-lTl"/>
                                 <constraint firstItem="PBt-q7-yAL" firstAttribute="leading" secondItem="GFZ-t6-wN0" secondAttribute="leading" constant="50" id="k4J-X9-k0f"/>
                                 <constraint firstItem="FEs-Wn-Ur2" firstAttribute="top" secondItem="GFZ-t6-wN0" secondAttribute="top" id="leX-Tw-A0Q"/>
                                 <constraint firstAttribute="height" constant="44" id="rja-gL-yx3"/>
